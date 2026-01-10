@@ -1,0 +1,12 @@
+{
+  "programming": ["JavaScript", "TypeScript", "PHP", "C#", "Processing"],
+  "frameworks": ["React", "Next.js", "D3.js", "Shadcn UI"," ASP.NET"],
+  "tools": ["Wordpress", "Git", "GitHub", "CMS", "Docker", "Figma", "Vite"],
+  "styling": [
+    "CSS",
+    "TailwindCSS",
+    "Procreate",
+    "Font Awesome",
+    "Responsive Design"
+  ]
+}

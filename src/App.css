@@ -1,0 +1,129 @@
+.App {
+  min-height: 100vh;
+  position: relative;
+}
+
+.App::before {
+  content: '';
+  position: fixed;
+  bottom: -150px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #f78eace0 0%, #f78eac23 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+  animation: float2 18s ease-in-out infinite;
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-200px, -120px) scale(1.35);
+  }
+  66% {
+    transform: translate(160px, -160px) scale(0.8);
+  }
+}
+
+.main-content {
+  padding-top: 80px;
+  min-height: calc(100vh - 80px);
+}
+
+section {
+  padding: 6rem 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(137, 150, 252, 0.25),
+    rgba(131, 144, 243, 0.1)
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 24px rgba(131, 144, 243, 0.08);
+}
+
+.page {
+  padding: 2rem 0;
+  min-height: calc(100vh - 80px);
+}
+
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.skill-card h3 {
+  color: #646cff;
+  margin-bottom: 1rem;
+}
+
+.skill-category li {
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-category li:last-child {
+  border-bottom: none;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .page-content {
+    padding: 0 1rem;
+  }
+
+  .page h1 {
+    font-size: 2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
