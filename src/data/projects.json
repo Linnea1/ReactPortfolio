@@ -23,7 +23,8 @@
     "description": "This is a project done for the Queer Youth Uganda organisation, a website to extend their digital presence beyond social media. The website serves as a platform to share their mission, activities, and resources with the community. Since the political situation in Uganda is very dangerous for queer people, the website has a quick exit button for users safety. This project caught the attention of the local newspaper Sydsvenskan, featuring an article about the Queer Youth Uganda and their website. ",
     "thumbnail": "/src/assets/images/project1/thumbnail.jpg",
     "tools": ["Wordpress", "Javascript", "CMS", "CSS", "Agile Development"]
-  },{
+  },
+  {
     "id": 3,
     "title": "Monamii",
     "images": [

@@ -1,0 +1,108 @@
+// Project 1 - Queer Youth Uganda
+import project1Image1 from "../assets/images/project1/image2.png";
+import project1Image2 from "../assets/images/project1/image1.png";
+import project1Image3 from "../assets/images/project1/image3.png";
+import project1Thumbnail from "../assets/images/project1/thumbnail.jpg";
+
+// Project 2 - Åderbråckscentrum
+import project2Image1 from "../assets/images/project2/image1.png";
+import project2Image2 from "../assets/images/project2/image2.png";
+import project2Image3 from "../assets/images/project2/image3.png";
+import project2Thumbnail from "../assets/images/project2/thumbnail.jpg";
+
+// Project 3 - Bron Mobile Game
+import project3Thumbnail from "../assets/images/project3/project3.jpg";
+
+// Project 4 - Campaign Pages
+import project4Image1 from "../assets/images/project4/image1.png";
+import project4Image2 from "../assets/images/project4/image2.png";
+import project4Thumbnail from "../assets/images/project4/thumbnail.jpg";
+
+// Project 5 - Golden Bet
+import project5Image1 from "../assets/images/project5/image1.png";
+import project5Image2 from "../assets/images/project5/image2.png";
+import project5Image3 from "../assets/images/project5/image3.png";
+import project5Image4 from "../assets/images/project5/image4.png";
+import project5Thumbnail from "../assets/images/project5/project5.jpg";
+
+// Project 6 - Portfolio
+import project6Image1 from "../assets/images/project6/image1.png";
+import project6Image2 from "../assets/images/project6/image2.png";
+import project6Image3 from "../assets/images/project6/image3.png";
+import project6Image4 from "../assets/images/project6/image4.png";
+import project6Thumbnail from "../assets/images/project6/thumbnail.jpg";
+
+// Project 7 - Monamii
+import project7Image1 from "../assets/images/project7/image1.png";
+import project7Image2 from "../assets/images/project7/image2.png";
+import project7Image3 from "../assets/images/project7/image3.png";
+import project7Image4 from "../assets/images/project7/image4.png";
+import project7Thumbnail from "../assets/images/project7/project7.jpg";
+
+const projects = [
+  {
+    id: 1,
+    title: "Portfolio",
+    images: [project6Image1, project6Image2, project6Image3, project6Image4],
+    description:
+      "My portfolio is designed to reflect my skills and style as a front-end developer. It features a modern design that is colourful, . The portfolio is built using Next.js, React, and Tailwind CSS, showcasing my ability to create responsive and visually appealing web applications. The site includes sections for my projects, skills, and contact information, allowing potential clients or employers to easily learn more about me and my work.",
+    thumbnail: project6Thumbnail,
+    tools: ["Typescript", "React", "Tailwind", "Next.js", "Procreate"],
+  },
+  {
+    id: 2,
+    title: "Queer Youth Uganda",
+    images: [project1Image1, project1Image2, project1Image3],
+    description:
+      "This is a project done for the Queer Youth Uganda organisation, a website to extend their digital presence beyond social media. The website serves as a platform to share their mission, activities, and resources with the community. Since the political situation in Uganda is very dangerous for queer people, the website has a quick exit button for users safety. This project caught the attention of the local newspaper Sydsvenskan, featuring an article about the Queer Youth Uganda and their website. ",
+    thumbnail: project1Thumbnail,
+    tools: ["Wordpress", "Javascript", "CMS", "CSS", "Agile Development"],
+  },
+  {
+    id: 3,
+    title: "Monamii",
+    images: [project7Image1, project7Image2, project7Image3, project7Image4],
+    description:
+      "Monamii is a frontend project built using React. It is a cakery website that offers wedding cakes and cupcakes for various occasions. The purpose of this project was to display my range of design and development skills. Check out the website here: https://linnea1.github.io/Cakery/",
+    thumbnail: project7Thumbnail,
+    tools: ["React", "CSS", "UI & UX Design"],
+  },
+  {
+    id: 4,
+    title: "Åderbråckscentrum",
+    images: [project2Image1, project2Image2, project2Image3],
+    description:
+      "I contributed to this project during my internship at Capace Media. This project taught me a lot about working with a team and how to communicate effectively. The website is built as a Headless Wordpress with React for the frontend. I worked closely with the design team to ensure that the website was visually appealing and easy to navigate.",
+    thumbnail: project2Thumbnail,
+    tools: ["Headless Wordpress", "React", "CSS", "Contact Form 7", "Shadcn"],
+  },
+  {
+    id: 5,
+    title: "Bron Mobile Game",
+    images: [],
+    description:
+      "This game was created using Javascript and PHP, as well as Web API. The game is based on the popular TV show 'Bron' and takes place in a fictional setting inspired by the show. The player solves a murder mystery by exploring locations in Malmö. By tracking the players location with Google Maps API, the game provides an immersive experience where they unlock clues in the puzzle.",
+    thumbnail: project3Thumbnail,
+    tools: ["Javascript", "Google Maps API", "PHP", "CSS", "Figma"],
+  },
+  {
+    id: 6,
+    title: "Campaign Pages",
+    images: [project4Image1, project4Image2],
+    description:
+      "During my internship I made campaign pages on Wordpress. What I learned from this experience was how to design pages to be visually appealing and effective in achieving marketing goals. Furthermore, I gained valuable experience in working with contact forms, especially Contact Form 7.",
+    thumbnail: project4Thumbnail,
+    tools: ["Wordpress", "CMS", "Marketing", "Contact Form 7"],
+  },
+  {
+    id: 7,
+    title: "Golden Bet",
+    images: [project5Image1, project5Image2, project5Image3, project5Image4],
+    description:
+      "Golden Bet is a betting website where users compete with their friends to predict the outcome of the Oscar awards and Emmy awards. The website is built using Javascript and PHP, with a focus on creating an engaging and interactive user experience. Users can create accounts, bet with friends, and track their predictions throughout the award season.",
+    thumbnail: project5Thumbnail,
+    tools: ["Javascript", "CSS", "Figma", "PHP"],
+  },
+];
+
+export default projects;

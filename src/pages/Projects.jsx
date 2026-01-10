@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "../components/common/Card.jsx";
 import CardSkeleton from "../components/common/CardSkeleton.jsx";
-import projects from "../data/projects.json";
+import projects from "../data/projects.js";
 import "./Projects.css";
 
 function Projects() {
@@ -24,7 +24,9 @@ function Projects() {
 
         <div className="projects-grid">
           {loading
-            ? Array(6).fill(0).map((_, index) => <CardSkeleton key={index} />)
+            ? Array(6)
+                .fill(0)
+                .map((_, index) => <CardSkeleton key={index} />)
             : projects.map((project) => (
                 <Card
                   key={project.id}
