@@ -8,7 +8,7 @@ body.on-home-page::after {
 }
 
 .home-page::before {
-  content: '';
+  content: "";
   position: fixed;
   border-radius: 50%;
   filter: blur(80px);
@@ -24,7 +24,8 @@ body.on-home-page::after {
 }
 
 @keyframes homeBlueGlow {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
   33% {
@@ -116,7 +117,6 @@ body.on-home-page::after {
   }
 }
 
-
 .detail-icon {
   flex-shrink: 0;
   width: 40px;
@@ -140,7 +140,7 @@ body.on-home-page::after {
   .about-me-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-    grid-template-areas: 
+    grid-template-areas:
       "image"
       "text";
   }
@@ -188,7 +188,8 @@ body.on-home-page::after {
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(-50%) translateY(0);
   }
   50% {
