@@ -1,13 +1,41 @@
+import { useState, useEffect, useRef } from "react";
 import "./SocialIcons.css";
 
 function SocialIcons() {
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="social-icons-container">
+    <div ref={containerRef} className={`social-icons-container ${isVisible ? 'visible' : ''}`}>
       <a
         href="https://github.com/Linnea1"
         target="_blank"
         rel="noopener noreferrer"
-        className="social-icon"
+        className="social-icon social-icon-1"
         aria-label="GitHub"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -19,7 +47,7 @@ function SocialIcons() {
         href="https://linkedin.com/in/andersson-linnéa"
         target="_blank"
         rel="noopener noreferrer"
-        className="social-icon"
+        className="social-icon social-icon-2"
         aria-label="LinkedIn"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -29,7 +57,7 @@ function SocialIcons() {
 
       <a
         href="mailto:linnea.a.14@gmail.com"
-        className="social-icon"
+        className="social-icon social-icon-3"
         aria-label="Email"
       >
         <svg

@@ -47,15 +47,16 @@ body.on-home-page::after {
 
 .about-me-grid {
   display: grid;
-  grid-template-columns: 5fr 9fr;
+  grid-template-columns: 4fr 9fr;
   gap: 3rem;
   align-items: center;
 }
 
 .about-me-image img {
-  width: 100%;
+  width: 75%;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 .intro-highlight {
@@ -88,6 +89,31 @@ body.on-home-page::after {
   border-radius: 12px;
   border-left: 3px solid #8390f3;
   transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.detail-item.detail-visible {
+  animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+.detail-item.detail-visible:nth-of-type(1) {
+  animation-delay: 0.1s;
+}
+
+.detail-item.detail-visible:nth-of-type(2) {
+  animation-delay: 0.25s;
+}
+
+.detail-item.detail-visible:nth-of-type(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes slideInFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 

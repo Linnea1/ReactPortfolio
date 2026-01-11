@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Modal from "./Modal.jsx";
 import Carousel from "./Carousel.jsx";
 import CardSkeleton from "./CardSkeleton.jsx";
@@ -7,6 +7,32 @@ import "./Card.css";
 const Card = ({ title, description, thumbnail, images, tags }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, [imageLoaded]);
 
   const handleCardClick = () => {
     setIsModalOpen(true);
@@ -47,7 +73,12 @@ const Card = ({ title, description, thumbnail, images, tags }) => {
   return (
     <>
       {!imageLoaded && <CardSkeleton />}
-      <div className="card" onClick={handleCardClick} style={{ display: imageLoaded ? 'block' : 'none' }}>
+      <div 
+        ref={cardRef}
+        className={`card ${isVisible ? 'card-visible' : ''}`} 
+        onClick={handleCardClick} 
+        style={{ display: imageLoaded ? 'block' : 'none' }}
+      >
         <div className="card-preview">
           <div className="card-thumbnail">
             <img 

@@ -10,14 +10,13 @@
 }
 
 .status-indicator {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
   background: #ccfae5;
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  width: fit-content;
 }
 
 .status-dot {
@@ -25,6 +24,7 @@
   height: 12px;
   min-width: 12px;
   min-height: 12px;
+  flex-shrink: 0;
   background: #2ab677;
   border-radius: 50%;
   box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
@@ -43,8 +43,13 @@
 .status-text {
   color: #2ab677;
   font-weight: 600;
-  margin: 0;
+  margin: 0 !important;
+ padding: 1;
   font-size: 1rem;
+  white-space: nowrap;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
 }
 
 .text-container > p {
@@ -198,6 +203,15 @@
   .image-container {
     display: none;
   }
+
+  .status-indicator {
+    padding: 0.4rem 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .status-text {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -217,5 +231,22 @@
 
   .contact-info > div h2 {
     font-size: 1.1rem;
+  }
+
+  .status-indicator {
+    padding: 0.35rem 0.7rem;
+    margin-bottom: 0.8rem;
+    max-width: 100%;
+  }
+
+  .status-text {
+    font-size: 0.9rem;
+  }
+
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    min-height: 10px;
   }
 }

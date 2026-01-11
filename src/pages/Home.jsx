@@ -1,18 +1,46 @@
 import Hero from "../components/common/Hero";
 import DownloadCV from "../components/common/DownloadCV";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import aboutMeImage from "../assets/images/aboutMe.png";
 import "./Home.css";
 
 function Home() {
   const aboutRef = useRef(null);
   const heroRef = useRef(null);
+  const [visibleItems, setVisibleItems] = useState([]);
+  const detailRefs = useRef([]);
 
   useEffect(() => {
     // Add class to body for home page styling
     document.body.classList.add('on-home-page');
     return () => {
       document.body.classList.remove('on-home-page');
+    };
+  }, []);
+
+  useEffect(() => {
+    const observers = detailRefs.current.map((ref, index) => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setVisibleItems((prev) => [...new Set([...prev, index])]);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      if (ref) {
+        observer.observe(ref);
+      }
+
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
     };
   }, []);
 
@@ -65,7 +93,10 @@ function Home() {
                 </div>
                 
                 <div className="about-details">
-                  <div className="detail-item">
+                  <div 
+                    ref={(el) => (detailRefs.current[0] = el)}
+                    className={`detail-item ${visibleItems.includes(0) ? 'detail-visible' : ''}`}
+                  >
                     <div className="detail-icon">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="16 18 22 12 16 6"></polyline>
@@ -75,7 +106,10 @@ function Home() {
                     <p>Strong interest in both web design and full-stack development, focusing on building visually engaging websites with high functionality.</p>
                   </div>
                   
-                  <div className="detail-item">
+                  <div 
+                    ref={(el) => (detailRefs.current[1] = el)}
+                    className={`detail-item ${visibleItems.includes(1) ? 'detail-visible' : ''}`}
+                  >
                     <div className="detail-icon">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
@@ -85,7 +119,10 @@ function Home() {
                     <p>Bachelor's degree in Media Technology, specialising in web-based design and development.</p>
                   </div>
                   
-                  <div className="detail-item">
+                  <div 
+                    ref={(el) => (detailRefs.current[2] = el)}
+                    className={`detail-item ${visibleItems.includes(2) ? 'detail-visible' : ''}`}
+                  >
                     <div className="detail-icon">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>

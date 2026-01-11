@@ -1,7 +1,7 @@
 .hero {
   display: grid;
   grid-template-columns: 50% auto;
-  height: 77vh;
+  height: 75vh;
 }
 .hero-content,
 .hero-video {
@@ -36,6 +36,13 @@
   max-height: 100%;
   border-radius: 8px;
   object-fit: cover;
+}
+
+/* Adjust height for laptop screens */
+@media (max-width: 1440px) and (max-height: 900px) {
+  .hero {
+    height: 62vh;
+  }
 }
 
 @media (max-width: 480px) {

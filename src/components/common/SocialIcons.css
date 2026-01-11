@@ -19,6 +19,35 @@
   box-shadow: 0 4px 15px rgba(131, 144, 243, 0.4),
               0 1px 3px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.social-icons-container.visible .social-icon {
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+.social-icons-container.visible .social-icon-1 {
+  animation-delay: 0.2s;
+}
+
+.social-icons-container.visible .social-icon-2 {
+  animation-delay: 0.4s;
+}
+
+.social-icons-container.visible .social-icon-3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .social-icon::before {
