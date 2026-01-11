@@ -48,16 +48,16 @@ body.on-home-page::after {
 
 .about-me-grid {
   display: grid;
-  grid-template-columns: 4fr 9fr;
+  grid-template-columns: 5fr 9fr;
   gap: 3rem;
   align-items: center;
 }
 
 .about-me-image img {
-  width: 75%;
+  width: 85%;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: auto 0;
 }
 
 .intro-highlight {
@@ -152,6 +152,11 @@ body.on-home-page::after {
   .about-me-image {
     grid-area: image;
     max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .about-me-image img {
+    width: 75%;
     margin: 0 auto;
   }
 
